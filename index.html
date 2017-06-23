@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forcont Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="node_modules/rison/js/rison.js"></script>
+    <script src="node_modules/requirejs/require.js"></script>
+    <script src="src/dashboard-integration.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body * {
+            box-sizing: border-box;
+        }
+        .container {
+            height: 100%;
+            min-height: 100%;
+            padding: 16px;
+        }
+        .block {
+            height: 5%;
+            min-height: 30px;
+        }
+        iframe {
+            border: 0;
+            height: 95%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <input type="date" id="from" title="Zeitraum von">
+            <input type="date" id="to" title="Zeitraum bis">
+            <input type="text" id="query" label="Abfrage">
+            <button onclick="setDateRange()">Absenden</button>
+        </div>
+        <iframe class="dashboard" src="http://149.235.80.187:5601/app/kibana#/dashboard/f4433930-573c-11e7-afc4-e330a80b37c6?embed=true&_g=(refreshInterval%3A(display%3AOff%2Cpause%3A!f%2Cvalue%3A0)%2Ctime%3A(from%3A'2017-06-13T22%3A00%3A00.000Z'%2Cmode%3Aabsolute%2Cto%3A'2017-06-14T21%3A59%3A59.999Z'))"></iframe>
+    </div>
+</body>
+</html>
